@@ -1,0 +1,58 @@
+.home {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.hero {
+  text-align: center;
+  padding: 3rem 0;
+  background: linear-gradient(135deg, rgba(100, 108, 255, 0.1) 0%, rgba(100, 108, 255, 0.05) 100%);
+  border-radius: 16px;
+  margin-bottom: 1rem;
+}
+
+.hero h1 {
+  margin: 0 0 1rem 0;
+  font-size: 3rem;
+  background: linear-gradient(135deg, #646cff 0%, #535bf2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero p {
+  font-size: 1.25rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0;
+}
+
+.blog-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+@media (prefers-color-scheme: light) {
+  .hero p {
+    color: rgba(0, 0, 0, 0.7);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 2rem 1rem;
+  }
+  
+  .hero h1 {
+    font-size: 2rem;
+  }
+  
+  .hero p {
+    font-size: 1rem;
+  }
+  
+  .blog-list {
+    gap: 1.5rem;
+  }
+}
