@@ -1,13 +1,44 @@
+import { useState, useEffect } from 'react';
 import { useParams, Navigate } from 'react-router-dom';
-import { blogPosts } from '../data/blogPosts';
+import { blogService } from '../services/blogService';
 import { renderMarkdown } from '../utils/markdown';
+import type { BlogPost as BlogPostType } from '../types/blog';
 import './BlogPost.css';
 
 const BlogPost = () => {
   const { id } = useParams<{ id: string }>();
-  const post = blogPosts.find((p) => p.id === id);
+  const [post, setPost] = useState<BlogPostType | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
-  if (!post) {
+  useEffect(() => {
+    if (id) {
+      loadPost(id);
+    }
+  }, [id]);
+
+  const loadPost = async (postId: string) => {
+    try {
+      setLoading(true);
+      setError(null);
+      const data = await blogService.getPostById(postId);
+      setPost(data);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Failed to load post');
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  if (loading) {
+    return (
+      <div className="blog-post-container">
+        <div className="loading-state">Loading post...</div>
+      </div>
+    );
+  }
+
+  if (error || !post) {
     return <Navigate to="/" replace />;
   }
 

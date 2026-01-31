@@ -9,6 +9,8 @@ A modern, fully-featured blog starter template built with React, TypeScript, and
 - 🎨 **Modern Design** - Clean, responsive UI that works on all devices
 - 🧭 **React Router** - Client-side routing for smooth navigation
 - 📝 **Markdown Support** - Simple markdown rendering for blog posts
+- 🗄️ **Supabase Integration** - Cloud-based PostgreSQL database for content storage
+- ✍️ **CMS Interface** - Built-in admin panel for creating and managing blog posts
 - 🌗 **Dark/Light Mode** - Automatic theme switching based on system preferences
 - 🎨 **Customizable** - Easy to modify colors, styles, and content
 
@@ -70,28 +72,22 @@ react-blog-starter/
 - `npm run preview` - Preview the production build locally
 - `npm run lint` - Run ESLint
 
-## Customization
+## Using the CMS
 
-### Adding Blog Posts
+### Managing Blog Posts
 
-Edit the `src/data/blogPosts.ts` file to add, remove, or modify blog posts. Each post follows this structure:
+The blog now includes a built-in CMS (Content Management System) for creating and managing posts:
 
-```typescript
-{
-  id: 'unique-id',
-  title: 'Your Post Title',
-  excerpt: 'A brief summary of your post',
-  content: `
-    # Your markdown content here
-    
-    Use standard markdown formatting...
-  `,
-  author: 'Author Name',
-  date: '2024-01-15',
-  readTime: 5,
-  tags: ['Tag1', 'Tag2'],
-}
-```
+1. **Access the Admin Panel**: Navigate to `/admin` in your browser
+2. **Create Posts**: Click "+ Create New Post" and fill in the form
+3. **Edit Posts**: Click "Edit" next to any post in the admin panel
+4. **Delete Posts**: Click "Delete" to remove a post (with confirmation)
+
+All posts are stored in Supabase and fetched dynamically. See [SUPABASE_SETUP.md](./SUPABASE_SETUP.md) for detailed setup instructions.
+
+### Legacy: Static Posts
+
+The old `src/data/blogPosts.ts` file is still present but no longer used. All posts should now be managed through the CMS interface.
 
 ### Styling
 
@@ -168,14 +164,18 @@ netlify deploy --prod --dir=dist
 ## Future Enhancements
 
 Consider adding:
-- Full-featured markdown parser (e.g., marked, remark)
-- Syntax highlighting for code blocks (e.g., Prism, highlight.js)
-- Search functionality
-- Tags/categories filtering
-- RSS feed generation
-- SEO optimization with React Helmet
-- Comments system
-- CMS integration (e.g., Contentful, Sanity)
+- **Authentication**: Supabase Auth to protect the admin panel
+- **Image Uploads**: Supabase Storage for cover image uploads
+- **Markdown Editor**: Rich text editor with live preview (e.g., MDX Editor)
+- **Syntax Highlighting**: Code highlighting for code blocks (e.g., Prism, highlight.js)
+- **Search**: Full-text search functionality with Supabase
+- **Filtering**: Tags and categories filtering on the home page
+- **RSS Feed**: Auto-generated RSS feed for blog subscribers
+- **SEO**: Meta tags and Open Graph optimization
+- **Comments**: Comment system (e.g., using Supabase Realtime)
+- **Post Scheduling**: Schedule posts for future publication
+- **Draft Mode**: Save posts as drafts before publishing
+- **Analytics**: Track post views and engagement
 
 ## License
 

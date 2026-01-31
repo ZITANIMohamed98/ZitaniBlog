@@ -1,0 +1,214 @@
+/**
+ * Portfolio Theme Integration
+ * Matching DevFolio template styling
+ */
+
+:root {
+  /* Primary Colors */
+  --portfolio-primary: #0078ff;
+  --portfolio-primary-dark: #0062cc;
+  --portfolio-primary-light: #cde1f8;
+  
+  /* Text Colors */
+  --portfolio-text-primary: #1e1e1e;
+  --portfolio-text-secondary: #4e4e4e;
+  --portfolio-text-light: #f5f5f5;
+  
+  /* Background Colors */
+  --portfolio-bg-primary: #ffffff;
+  --portfolio-bg-secondary: #f5f5f5;
+  --portfolio-bg-dark: #1e1e1e;
+  
+  /* Shadows */
+  --portfolio-shadow: 0 13px 8px -10px rgba(0, 0, 0, 0.1);
+  --portfolio-shadow-full: 0 1px 1px 0 rgba(0, 0, 0, 0.06), 0 2px 5px 0 rgba(0, 0, 0, 0.2);
+  --portfolio-shadow-hover: 0 0 0 4px #cde1f8;
+  
+  /* Spacing */
+  --portfolio-spacing-xs: 0.5rem;
+  --portfolio-spacing-sm: 1rem;
+  --portfolio-spacing-md: 2rem;
+  --portfolio-spacing-lg: 3rem;
+  --portfolio-spacing-xl: 4rem;
+  
+  /* Border Radius */
+  --portfolio-border-radius: 8px;
+  
+  /* Transitions */
+  --portfolio-transition: all 0.5s ease-in-out;
+}
+
+/* Global Overrides */
+body {
+  background-color: var(--portfolio-bg-secondary);
+  color: var(--portfolio-text-secondary);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--portfolio-text-primary);
+  font-weight: 600;
+}
+
+a {
+  color: var(--portfolio-text-primary);
+  text-decoration: none;
+  transition: var(--portfolio-transition);
+}
+
+a:hover {
+  color: var(--portfolio-primary);
+  text-decoration: none;
+}
+
+/* Portfolio-style Cards */
+.portfolio-card {
+  background-color: var(--portfolio-bg-primary);
+  border-radius: var(--portfolio-border-radius);
+  box-shadow: var(--portfolio-shadow);
+  padding: var(--portfolio-spacing-lg);
+  margin-bottom: var(--portfolio-spacing-lg);
+  transition: var(--portfolio-transition);
+}
+
+.portfolio-card:hover {
+  box-shadow: var(--portfolio-shadow-full);
+  transform: translateY(-5px);
+}
+
+/* Portfolio-style Buttons */
+.portfolio-btn {
+  background-color: var(--portfolio-primary);
+  color: white;
+  border: none;
+  padding: 0.75rem 2rem;
+  border-radius: var(--portfolio-border-radius);
+  font-weight: 500;
+  transition: var(--portfolio-transition);
+  cursor: pointer;
+  display: inline-block;
+}
+
+.portfolio-btn:hover {
+  background-color: var(--portfolio-primary-dark);
+  color: white;
+  box-shadow: var(--portfolio-shadow-hover);
+  transform: translateY(-2px);
+}
+
+.portfolio-btn-outline {
+  background-color: transparent;
+  color: var(--portfolio-primary);
+  border: 2px solid var(--portfolio-primary);
+  padding: 0.75rem 2rem;
+  border-radius: var(--portfolio-border-radius);
+  font-weight: 500;
+  transition: var(--portfolio-transition);
+  cursor: pointer;
+  display: inline-block;
+}
+
+.portfolio-btn-outline:hover {
+  background-color: var(--portfolio-primary);
+  color: white;
+}
+
+/* Portfolio-style Headers */
+.portfolio-section-title {
+  font-size: 3rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: var(--portfolio-spacing-xl);
+  color: var(--portfolio-text-primary);
+}
+
+.portfolio-section-title::after {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 5px;
+  background-color: var(--portfolio-primary);
+  margin: 1rem auto 0;
+}
+
+.portfolio-title-underline {
+  position: relative;
+  padding-bottom: 1rem;
+}
+
+.portfolio-title-underline::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  background-color: var(--portfolio-primary);
+  width: 100px;
+}
+
+/* Portfolio-style Tags */
+.portfolio-tag {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  background-color: var(--portfolio-primary-light);
+  color: var(--portfolio-primary);
+  border-radius: 20px;
+  font-size: 0.875rem;
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Portfolio-style Meta Info */
+.portfolio-meta {
+  color: var(--portfolio-text-secondary);
+  font-size: 0.875rem;
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.portfolio-meta span {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Portfolio Box Shadow Full */
+.box-shadow-full {
+  padding: 3rem 1.25rem;
+  background-color: var(--portfolio-bg-primary);
+  box-shadow: var(--portfolio-shadow-full);
+  margin-bottom: var(--portfolio-spacing-lg);
+}
+
+/* Loading States */
+.portfolio-loading {
+  text-align: center;
+  padding: 3rem;
+  font-size: 1.125rem;
+  color: var(--portfolio-text-secondary);
+}
+
+/* Error States */
+.portfolio-error {
+  text-align: center;
+  padding: 3rem;
+  color: #dc3545;
+}
+
+.portfolio-error button {
+  margin-top: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .portfolio-section-title {
+    font-size: 2rem;
+  }
+  
+  .box-shadow-full {
+    padding: 2rem 1rem;
+  }
+}

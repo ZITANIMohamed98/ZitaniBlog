@@ -6,11 +6,13 @@ const Header = () => {
     <header className="header">
       <div className="header-content">
         <Link to="/" className="logo">
-          <h1>My Blog</h1>
+          <h1>Blog</h1>
         </Link>
         <nav className="nav">
+          <a href="/" className="nav-link" title="Back to Portfolio">← Portfolio</a>
           <Link to="/" className="nav-link">Home</Link>
           <Link to="/about" className="nav-link">About</Link>
+          <Link to="/admin" className="nav-link">Admin</Link>
         </nav>
       </div>
     </header>

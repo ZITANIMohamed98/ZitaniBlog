@@ -1,0 +1,33 @@
+.create-post-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.create-post-header {
+  margin-bottom: 2rem;
+}
+
+.create-post-header h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+.error-message {
+  padding: 1rem;
+  background: rgba(255, 59, 48, 0.1);
+  border: 1px solid rgba(255, 59, 48, 0.3);
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+}
+
+.error-message p {
+  margin: 0;
+  color: rgba(255, 59, 48, 1);
+}
+
+@media (max-width: 768px) {
+  .create-post-container {
+    padding: 1rem;
+  }
+}

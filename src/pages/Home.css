@@ -33,6 +33,31 @@
   gap: 2rem;
 }
 
+.loading-state,
+.error-state,
+.empty-state {
+  text-align: center;
+  padding: 3rem 2rem;
+  font-size: 1.125rem;
+  color: var(--text-secondary);
+}
+
+.error-state button {
+  margin-top: 1rem;
+  padding: 0.75rem 1.5rem;
+  background: rgba(100, 108, 255, 1);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.2s;
+}
+
+.error-state button:hover {
+  background: rgba(100, 108, 255, 0.8);
+}
+
 @media (prefers-color-scheme: light) {
   .hero p {
     color: rgba(0, 0, 0, 0.7);
